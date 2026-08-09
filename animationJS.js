@@ -15,31 +15,19 @@ var talaounaota = 1
         document.getElementById("botaodomenu").style.cursor = "default"
         document.getElementById("botaodomenu").setAttribute( "onClick", "" );
         document.getElementById("pause").style.display = "none"
-        var SolEscolhido, UpgradeEscolhido, MundoEscolhido, AreaEscolhido, DanoEscolhido, CarregamentoEscolhido, specialEscolhido, Ganhou, Perdeu = ""
-        var dbRef3 = firebase.database().ref().child('Plantas/PvZ1/'+numero6)
+        var DurezaEscolhido, VelocidadeEscolhido, MundoEscolhido, FraquezaEscolhido, specialEscolhido, Ganhou, Perdeu = ""
+        var dbRef3 = firebase.database().ref().child('Zumbis/PvZ1/'+numero6)
         dbRef3.on('value', snapshot => {
-            SolEscolhido = snapshot.val().Sun;
-            SolEscolhido = SolEscolhido.toString();
-            UpgradeEscolhido = snapshot.val().Upgrade;
             MundoEscolhido = snapshot.val().World;
-            AreaEscolhido = snapshot.val().Range;
-            DanoEscolhido = snapshot.val().Damage;
-            CarregamentoEscolhido = snapshot.val().Recharge;
+            DurezaEscolhido = snapshot.val().Toughness;
+            VelocidadeEscolhido = snapshot.val().Speed;
+            FraquezaEscolhido = snapshot.val().Weakness;
             specialEscolhido = snapshot.val().Special;
             NomeEscolhido = snapshot.val().Name;
             Ganhou = snapshot.val().Won; 
             Perdeu = snapshot.val().Wrong; 
         });
         var certoouerrado = ""
-        var solcertoouerrado = ""
-        if (SolEscolhido !== SolDoDia) {
-            errou(numero6)
-            solcertoouerrado = solcertoouerrado + "🟥"
-            corSol = "#dc3545"
-        } else {
-            solcertoouerrado = solcertoouerrado + "🟩"
-            corSol = "#198754"
-        }
         if (MundoEscolhido !== MundoDoDia) {
             errou(numero6)
             certoouerrado = certoouerrado + "🟥"
@@ -72,128 +60,112 @@ var talaounaota = 1
                 Mundao = "Image/Packet Seeds/Plants/WorldShop.webp"
             }   
         }
-        if (CarregamentoEscolhido !== CarregamentoDoDia) {
+        if (DurezaEscolhido !== DurezaDoDia) {
             errou(numero6)
             certoouerrado = certoouerrado + "🟥"
-            if (CarregamentoEscolhido == "Fast") {
-                carregou = "Image/Packet Seeds/Plants/FastWrong.webp"
-            } else if (CarregamentoEscolhido == "Slow") {
-                carregou = "Image/Packet Seeds/Plants/SlowWrong.webp"
-            } else if (CarregamentoEscolhido == "Very slow") {
-                carregou = "Image/Packet Seeds/Plants/Very slowWrong.webp"
+            if (DurezaEscolhido == "Low") {
+                carregou = "Image/Zombies/Icons/ToughnessLowWrong.webp"
+            } else if (DurezaEscolhido == "Medium") {
+                carregou = "Image/Zombies/Icons/ToughnessMediumWrong.webp"
+            } else if (DurezaEscolhido == "High") {
+                carregou = "Image/Zombies/Icons/ToughnessHighWrong.webp"
+            } else if (DurezaEscolhido == "Very high") {
+                carregou = "Image/Zombies/Icons/ToughnessVeryHighWrong.webp"
+            } else if (DurezaEscolhido == "Extremely high") {
+                carregou = "Image/Zombies/Icons/ToughnessExtremelyHighWrong.webp"
+            } else if (DurezaEscolhido == "Extreme") {
+                carregou = "Image/Zombies/Icons/ToughnessExtremeWrong.webp"
             } else {
-                carregou = "Image/Packet Seeds/Plants/AhnWrong.webp"
+                carregou = "Image/Zombies/Icons/AhnWrong.webp"
             }
         } else {
             certoouerrado = certoouerrado + "🟩"
-            if (CarregamentoEscolhido == "Fast") {
-                carregou = "Image/Packet Seeds/Plants/Fast.webp"
-            } else if (CarregamentoEscolhido == "Slow") {
-                carregou = "Image/Packet Seeds/Plants/Slow.webp"
-            } else if (CarregamentoEscolhido == "Very slow") {
-                carregou = "Image/Packet Seeds/Plants/Very slow.webp"
+            if (DurezaEscolhido == "Low") {
+                carregou = "Image/Zombies/Icons/ToughnessLow.webp"
+            } else if (DurezaEscolhido == "Medium") {
+                carregou = "Image/Zombies/Icons/ToughnessMedium.webp"
+            } else if (DurezaEscolhido == "High") {
+                carregou = "Image/Zombies/Icons/ToughnessHigh.webp"
+            } else if (DurezaEscolhido == "Very high") {
+                carregou = "Image/Zombies/Icons/ToughnessVeryHigh.webp"
+            } else if (DurezaEscolhido == "Extremely high") {
+                carregou = "Image/Zombies/Icons/ToughnessExtremelyHigh.webp"
+            } else if (DurezaEscolhido == "Extreme") {
+                carregou = "Image/Zombies/Icons/ToughnessExtreme.webp"
             } else {
-                carregou = "Image/Packet Seeds/Plants/Ahn.webp"
+                carregou = "Image/Zombies/Icons/Ahn.webp"
             }
         }
-        if (AreaEscolhido !== AreaDoDia) {
+        if (VelocidadeEscolhido !== VelocidadeDoDia) {
             errou(numero6)
             certoouerrado = certoouerrado + "🟥"
-            if (AreaEscolhido == "3x3") {
-                Areazinha = "Image/Packet Seeds/Plants/3x3Wrong.webp"
-            } else if (AreaEscolhido == "All board") {
-                Areazinha = "Image/Packet Seeds/Plants/All boardWrong.webp"
-            } else if (AreaEscolhido == "High") {
-                Areazinha = "Image/Packet Seeds/Plants/HighWrong.webp"
-            } else if (AreaEscolhido == "Medium") {
-                Areazinha = "Image/Packet Seeds/Plants/MediumWrong.webp"
-            } else if (AreaEscolhido == "Short") {
-                Areazinha = "Image/Packet Seeds/Plants/ShortWrong.webp"
-            } else if (AreaEscolhido == "Single line") {
-                Areazinha = "Image/Packet Seeds/Plants/Single lineWrong.webp"
-            } else if (AreaEscolhido == "Very short") {
-                Areazinha = "Image/Packet Seeds/Plants/Very shortWrong.webp"
-            } else if (AreaEscolhido == "No") {
-                Areazinha = "Image/Packet Seeds/Plants/NoWrong.webp"
+            if (VelocidadeEscolhido == "Normal") {
+                Areazinha = "Image/Zombies/Icons/SpeedNormalWrong.webp"
+            } else if (VelocidadeEscolhido == "Fast") {
+                Areazinha = "Image/Zombies/Icons/SpeedFastWrong.webp"
+            } else if (VelocidadeEscolhido == "Slow") {
+                Areazinha = "Image/Zombies/Icons/SpeedSlowWrong.webp"
+            } else if (VelocidadeEscolhido == "Variable") {
+                Areazinha = "Image/Zombies/Icons/SpeedVariableWrong.webp"
+            } else if (VelocidadeEscolhido == "None") {
+                Areazinha = "Image/Zombies/Icons/SpeedNoneWrong.webp"
             } else {
-                Areazinha = "Image/Packet Seeds/Plants/AhnWrong.webp"
+                Areazinha = "Image/Zombies/Icons/AhnWrong.webp"
             }
         } else {
             certoouerrado = certoouerrado + "🟩"
-            if (AreaEscolhido == "3x3") {
-                Areazinha = "Image/Packet Seeds/Plants/3x3.webp"
-            } else if (AreaEscolhido == "All board") {
-                Areazinha = "Image/Packet Seeds/Plants/All board.webp"
-            } else if (AreaEscolhido == "High") {
-                Areazinha = "Image/Packet Seeds/Plants/High.webp"
-            } else if (AreaEscolhido == "Medium") {
-                Areazinha = "Image/Packet Seeds/Plants/Medium.webp"
-            } else if (AreaEscolhido == "Short") {
-                Areazinha = "Image/Packet Seeds/Plants/Short.webp"
-            } else if (AreaEscolhido == "Single line") {
-                Areazinha = "Image/Packet Seeds/Plants/Single line.webp"
-            } else if (AreaEscolhido == "Very short") {
-                Areazinha = "Image/Packet Seeds/Plants/Very short.webp"
-            } else if (AreaEscolhido == "No") {
-                Areazinha = "Image/Packet Seeds/Plants/No.webp"
+            if (VelocidadeEscolhido == "Normal") {
+                Areazinha = "Image/Zombies/Icons/SpeedNormal.webp"
+            } else if (VelocidadeEscolhido == "Fast") {
+                Areazinha = "Image/Zombies/Icons/SpeedFast.webp"
+            } else if (VelocidadeEscolhido == "Slow") {
+                Areazinha = "Image/Zombies/Icons/SpeedSlow.webp"
+            } else if (VelocidadeEscolhido == "Variable") {
+                Areazinha = "Image/Zombies/Icons/SpeedVariable.webp"
+            } else if (VelocidadeEscolhido == "None") {
+                Areazinha = "Image/Zombies/Icons/SpeedNone.webp"
             } else {
-                Areazinha = "Image/Packet Seeds/Plants/Ahn.webp"
+                Areazinha = "Image/Zombies/Icons/Ahn.webp"
             }
         }
-        if (DanoEscolhido !== DanoDoDia) {
+        if (FraquezaEscolhido !== FraquezaDoDia) {
             errou(numero6)
             certoouerrado = certoouerrado + "🟥"
-            if (DanoEscolhido == "Heavy") {
-                Doeu = "Image/Packet Seeds/Plants/DamageHeavyWrong.webp"
-            } else if (DanoEscolhido == "Massive") {
-                Doeu = "Image/Packet Seeds/Plants/DamageMassiveWrong.webp"
-            } else if (DanoEscolhido == "Normal") {
-                Doeu = "Image/Packet Seeds/Plants/DamageNormalWrong.webp"
-            } else if (DanoEscolhido == "Very heavy") {
-                Doeu = "Image/Packet Seeds/Plants/DamageVeryHeavyWrong.webp"
-            } else if (DanoEscolhido == "Light") {
-                Doeu = "Image/Packet Seeds/Plants/DamageLightWrong.webp"
-            } else if (DanoEscolhido == "No") {
-                Doeu = "Image/Packet Seeds/Plants/NoWrong.webp"
+            if (FraquezaEscolhido == "No") {
+                Doeu = "Image/Zombies/Icons/NoWrong.webp"
+            } else if (FraquezaEscolhido == "Yes") {
+                Doeu = "Image/Zombies/Icons/YesWrong.webp"
             } else {
-                Doeu = "Image/Packet Seeds/Plants/AhnWrong.webp"
+                Doeu = "Image/Zombies/Icons/AhnWrong.webp"
             }
         } else {
             certoouerrado = certoouerrado + "🟩"
-            if (DanoEscolhido == "Heavy") {
-                Doeu = "Image/Packet Seeds/Plants/DamageHeavy.webp"
-            } else if (DanoEscolhido == "Massive") {
-                Doeu = "Image/Packet Seeds/Plants/DamageMassive.webp"
-            } else if (DanoEscolhido == "Normal") {
-                Doeu = "Image/Packet Seeds/Plants/DamageNormal.webp"
-            } else if (DanoEscolhido == "Very heavy") {
-                Doeu = "Image/Packet Seeds/Plants/DamageVeryHeavy.webp"
-            } else if (DanoEscolhido == "Light") {
-                Doeu = "Image/Packet Seeds/Plants/DamageLight.webp"
-            } else if (DanoEscolhido == "No") {
-                Doeu = "Image/Packet Seeds/Plants/No.webp"
+            if (FraquezaEscolhido == "No") {
+                Doeu = "Image/Zombies/Icons/No.webp"
+            } else if (FraquezaEscolhido == "Yes") {
+                Doeu = "Image/Zombies/Icons/Yes.webp"
             } else {
-                Doeu = "Image/Packet Seeds/Plants/Ahn.webp"
+                Doeu = "Image/Zombies/Icons/Ahn.webp"
             }
         }
         if (specialEscolhido !== specialDoDia) {
             errou(numero6)
             certoouerrado = certoouerrado + "🟥"
             if (specialEscolhido == "No") {
-                Legal = "Image/Packet Seeds/Plants/NoWrong.webp"
+                Legal = "Image/Zombies/Icons/NoWrong.webp"
             } else if (specialEscolhido == "Yes") {
-                Legal = "Image/Packet Seeds/Plants/YesWrong.webp"
+                Legal = "Image/Zombies/Icons/YesWrong.webp"
             } else {
-                Legal = "Image/Packet Seeds/Plants/AhnWrong.webp"
+                Legal = "Image/Zombies/Icons/AhnWrong.webp"
             }
         } else {
             certoouerrado = certoouerrado + "🟩"
             if (specialEscolhido == "No") {
-                Legal = "Image/Packet Seeds/Plants/No.webp"
+                Legal = "Image/Zombies/Icons/No.webp"
             } else if (specialEscolhido == "Yes") {
-                Legal = "Image/Packet Seeds/Plants/Yes.webp"
+                Legal = "Image/Zombies/Icons/Yes.webp"
             } else {
-                Legal = "Image/Packet Seeds/Plants/Ahn.webp"
+                Legal = "Image/Zombies/Icons/Ahn.webp"
             }
         }
         if (talaounaota == 1) {
@@ -210,18 +182,18 @@ var talaounaota = 1
             emojinumero = "\n6️⃣"
         }
         if (vitoria <= 0) {
-            document.getElementById("compartilharmensagem"+talaounaota).innerText = emojinumero + solcertoouerrado + "🟥" + certoouerrado
+            document.getElementById("compartilharmensagem"+talaounaota).innerText = emojinumero + certoouerrado
            ImagemDaPlanta = Perdeu
         } else {
             ImagemDaPlanta = Ganhou
         }
         talaounaota++
-        var solquant  = document.createElement("a")
-        solquant.id = "solquantidade"+soissoissois
+        var carregouNomeEscolhido = document.createElement("a")
+        carregouNomeEscolhido.id = "solquantidade"+soissoissois
         soissoissois++
-        solquant.style = "position: absolute; margin-left: 36px; margin-top: 83px; color: "+corSol+"; font-family: PvZFont2; text-align: center"
-        solquant.innerText = SolEscolhido
-        document.getElementById("yayay"+yipe).appendChild(solquant);
+        carregouNomeEscolhido.style = "display: none"
+        carregouNomeEscolhido.innerText = NomeEscolhido
+        document.getElementById("yayay"+yipe).appendChild(carregouNomeEscolhido);
         var semente  = document.createElement("img")
         semente.src = "Image/Windows/Seed_Slots2dnv.png"
         semente.width = "680"
@@ -229,13 +201,6 @@ var talaounaota = 1
         semente.classList = "img-fluid"
         semente.style = "margin-top: 2px;"
         document.getElementById("yayay"+yipe).appendChild(semente);
-        var sol  = document.createElement("img")
-        sol.src = "Image/Others/Sun.gif"
-        sol.style = "margin-left: -540px;"
-        sol.classList = "sol"
-        sol.width = "60"
-        sol.id = "sois"+solsolsol
-        document.getElementById("yayay"+yipe).appendChild(sol);
         var pacote1  = document.createElement("img")
         pacote1.src = ImagemDaPlanta
         pacote1.style = "margin-left: -93px; position: relative"
@@ -343,13 +308,9 @@ var talaounaota = 1
             lalalala++
         }, 3000);
         setTimeout(function () { 
-            document.getElementById("sois"+solsolsol).classList.add("animation"+solsolsol);
-        }, 3500);
-        setTimeout(function () { 
             document.getElementById("escolha").disabled = false;
             document.getElementById("botaodomenu").style.cursor = "pointer"
             document.getElementById("botaodomenu").setAttribute( "onClick", "menupause()" );
-            solsolsol++
             if ((vitoria == 1) || (derrota == 6)) {
                 document.getElementById("escolha").disabled = true
             }

@@ -127,7 +127,7 @@
     var numero2 = 0;
     var vitoria = 1;
     var derrota = 0;
-    var totalplantas = 49;
+    var totalplantas = 26;
     var som = 0;
     var lista = [];
     var trofeu = "";
@@ -187,7 +187,7 @@
     });
 
     while (numero < totalplantas ) {
-        var dbRef = firebase.database().ref().child('Plantas/PvZ1/'+numero);
+        var dbRef = firebase.database().ref().child('Zumbis/PvZ1/'+numero);
         dbRef.on('value', snapshot => {
             var div = document.createElement("div");
             div.id = numero2
@@ -212,45 +212,26 @@
             mundo.setAttribute("id", "mundo"+numero2)
             mundo.style = "box-sizing: content-box; display: inline-block; width: 65px; text-align: center;"
             document.getElementById(numero2).appendChild(mundo);
-            var sol = document.createElement("a");
-            sol.innerText = snapshot.val().Sun;
-            sol.setAttribute("id", "sol"+numero2)
-            sol.style = "box-sizing: content-box; display: inline-block; width: 25px; text-align: center;"
-            document.getElementById(numero2).appendChild(sol);
-            var carregar = document.createElement("a");
-            carregar.innerText = snapshot.val().Recharge;
-            carregar.setAttribute("id", "carregar"+numero2)
-            carregar.style = "box-sizing: content-box; display: inline-block; width: 85px; text-align: center;"
-            document.getElementById(numero2).appendChild(carregar);
-            var area = document.createElement("a");
-            area.innerText = snapshot.val().Range;
-            area.setAttribute("id", "area"+numero2)
-            area.style = "box-sizing: content-box; display: inline-block; width: 55px; text-align: center"
-            if (area.innerText == "Very short" || area.innerText == "All board") {
-                area.style = "box-sizing: content-box; display: inline-block; width: 55px; text-align: center;; font-size: 15px;"
-            }
-            if (area.innerText == "Very short") {
-                area.innerText = "V. short"
-            }
-            if (area.innerText == "Single line") {
-                area.innerText = "Single"
-            }
-            document.getElementById(numero2).appendChild(area);
-            var dano = document.createElement("a");
-            dano.innerText = snapshot.val().Damage;
-            dano.setAttribute("id", "dano"+numero2)
-            dano.style = "box-sizing: content-box; display: inline-block; width: 75px; text-align: center;"
-            document.getElementById(numero2).appendChild(dano);
+            var dureza = document.createElement("a");
+            dureza.innerText = snapshot.val().Toughness;
+            dureza.setAttribute("id", "dureza"+numero2)
+            dureza.style = "box-sizing: content-box; display: inline-block; width: 85px; text-align: center;"
+            document.getElementById(numero2).appendChild(dureza);
+            var velocidade = document.createElement("a");
+            velocidade.innerText = snapshot.val().Speed;
+            velocidade.setAttribute("id", "velocidade"+numero2)
+            velocidade.style = "box-sizing: content-box; display: inline-block; width: 55px; text-align: center"
+            document.getElementById(numero2).appendChild(velocidade);
             var special = document.createElement("a");
             special.innerText = snapshot.val().Special;
             special.setAttribute("id", "special"+numero2)
             special.style = "box-sizing: content-box; display: inline-block; width: 60px; text-align: center;"
             document.getElementById(numero2).appendChild(special);
-            var upgrade = document.createElement("a");
-            upgrade.innerText = snapshot.val().Upgrade;
-            upgrade.setAttribute("id", "upgrade"+numero2)
-            upgrade.style = "box-sizing: content-box; display: inline-block; width: 70px; text-align: center; display: none"
-            document.getElementById(numero2).appendChild(upgrade);
+            var fraqueza = document.createElement("a");
+            fraqueza.innerText = snapshot.val().Weakness;
+            fraqueza.setAttribute("id", "fraqueza"+numero2)
+            fraqueza.style = "box-sizing: content-box; display: inline-block; width: 75px; text-align: center;"
+            document.getElementById(numero2).appendChild(fraqueza);
             lista.push(snapshot.val().Name);
             numero2++
         });
@@ -283,16 +264,13 @@
         PlantaDoDia = 20;
     }
 
-    var SolDoDia, UpgradeDoDia, MundoDoDia, AreaDoDia, DanoDoDia, CarregamentoDoDia, specialDoDia, NomeDoDia;
-    var dbRef2 = firebase.database().ref().child('Plantas/PvZ1/'+PlantaDoDia)
+    var MundoDoDia, DurezaDoDia, VelocidadeDoDia, FraquezaDoDia, specialDoDia, NomeDoDia;
+    var dbRef2 = firebase.database().ref().child('Zumbis/PvZ1/'+PlantaDoDia)
     dbRef2.on('value', snapshot => {
-        SolDoDia = snapshot.val().Sun;
-        SolDoDia = SolDoDia.toString();
-        UpgradeDoDia = snapshot.val().Upgrade;
         MundoDoDia = snapshot.val().World;
-        AreaDoDia = snapshot.val().Range;
-        DanoDoDia = snapshot.val().Damage;
-        CarregamentoDoDia = snapshot.val().Recharge;
+        DurezaDoDia = snapshot.val().Toughness;
+        VelocidadeDoDia = snapshot.val().Speed;
+        FraquezaDoDia = snapshot.val().Weakness;
         specialDoDia = snapshot.val().Special;
         NomeDoDia = snapshot.val().Name;
         ImagemDoDia = snapshot.val().Image;

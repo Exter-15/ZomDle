@@ -1,0 +1,32 @@
+{
+  "Zumbis": {
+    "PvZ1": {
+      "0":  { "Name": "zombie",  "World": "Day",   "Toughness": "Low",             "Speed": "Normal",   "Special": "No",  "Weakness": "No",  "Image": "Image/Zombies/basiczombie0001.png" },
+      "1":  { "Name": "flag",    "World": "Day",   "Toughness": "Low",             "Speed": "Normal",   "Special": "No",  "Weakness": "No",  "Image": "Image/Zombies/flag0001.png" },
+      "2":  { "Name": "cone",    "World": "Day",   "Toughness": "Medium",          "Speed": "Normal",   "Special": "No",  "Weakness": "No",  "Image": "Image/Zombies/conehead0001.png" },
+      "3":  { "Name": "pole",    "World": "Day",   "Toughness": "Medium",          "Speed": "Variable", "Special": "Yes", "Weakness": "No",  "Image": "Image/Zombies/polevaulter0001.png" },
+      "4":  { "Name": "bucket",  "World": "Day",   "Toughness": "High",            "Speed": "Normal",   "Special": "No",  "Weakness": "Yes", "Image": "Image/Zombies/buckethead0001.png" },
+      "5":  { "Name": "new",     "World": "Night", "Toughness": "Low",             "Speed": "Variable", "Special": "No",  "Weakness": "No",  "Image": "Image/Zombies/newspaper0001.png" },
+      "6":  { "Name": "door",    "World": "Night", "Toughness": "Low",             "Speed": "Normal",   "Special": "No",  "Weakness": "Yes", "Image": "Image/Zombies/screendoor0001.png" },
+      "7":  { "Name": "rugby",   "World": "Night", "Toughness": "Very high",       "Speed": "Fast",     "Special": "No",  "Weakness": "Yes", "Image": "Image/Zombies/football0001.png" },
+      "8":  { "Name": "mj",      "World": "Night", "Toughness": "Medium",          "Speed": "Normal",   "Special": "Yes", "Weakness": "No",  "Image": "Image/Zombies/disco0001.png" },
+      "9":  { "Name": "backup",  "World": "Night", "Toughness": "Low",             "Speed": "Normal",   "Special": "No",  "Weakness": "No",  "Image": "Image/Zombies/backup0001.png" },
+      "10": { "Name": "patito",  "World": "Pool",  "Toughness": "Low",             "Speed": "Normal",   "Special": "No",  "Weakness": "No",  "Image": "Image/Zombies/duckytube0001.png" },
+      "11": { "Name": "buzo",    "World": "Pool",  "Toughness": "Low",             "Speed": "Normal",   "Special": "Yes", "Weakness": "Yes", "Image": "Image/Zombies/snorkle0001.png" },
+      "12": { "Name": "zomboni", "World": "Pool",  "Toughness": "High",            "Speed": "Normal",   "Special": "Yes", "Weakness": "No",  "Image": "Image/Zombies/zomboni0001.png" },
+      "13": { "Name": "bob",     "World": "Pool",  "Toughness": "Low",             "Speed": "Normal",   "Special": "Yes", "Weakness": "No",  "Image": "Image/Zombies/bobsled0001.png" },
+      "14": { "Name": "dolphin", "World": "Pool",  "Toughness": "Medium",          "Speed": "Variable", "Special": "Yes", "Weakness": "No",  "Image": "Image/Zombies/dolphin0001.png" },
+      "15": { "Name": "jack",    "World": "Fog",   "Toughness": "Medium",          "Speed": "Fast",     "Special": "Yes", "Weakness": "Yes", "Image": "Image/Zombies/jackbox0014.png" },
+      "16": { "Name": "bloon",   "World": "Fog",   "Toughness": "Low",             "Speed": "Normal",   "Special": "Yes", "Weakness": "Yes", "Image": "Image/Zombies/balloon0001.png" },
+      "17": { "Name": "digger",  "World": "Fog",   "Toughness": "Medium",          "Speed": "Variable", "Special": "Yes", "Weakness": "Yes", "Image": "Image/Zombies/digger0001.png" },
+      "18": { "Name": "pogo",    "World": "Fog",   "Toughness": "Medium",          "Speed": "Normal",   "Special": "Yes", "Weakness": "Yes", "Image": "Image/Zombies/pogo0001.png" },
+      "19": { "Name": "yeti",    "World": "Fog",   "Toughness": "High",            "Speed": "Fast",     "Special": "Yes", "Weakness": "No",  "Image": "Image/Zombies/yeti0001.png" },
+      "20": { "Name": "bungee",  "World": "Roof",  "Toughness": "Medium",          "Speed": "Normal",   "Special": "Yes", "Weakness": "Yes", "Image": "Image/Zombies/bungee0001.png" },
+      "21": { "Name": "ladder",  "World": "Roof",  "Toughness": "Medium",          "Speed": "Variable", "Special": "Yes", "Weakness": "Yes", "Image": "Image/Zombies/ladder0001.png" },
+      "22": { "Name": "cata",    "World": "Roof",  "Toughness": "Medium",          "Speed": "Normal",   "Special": "Yes", "Weakness": "Yes", "Image": "Image/Zombies/catapult0001.png" },
+      "23": { "Name": "garg",    "World": "Roof",  "Toughness": "Extremely high",  "Speed": "Slow",     "Special": "Yes", "Weakness": "No",  "Image": "Image/Zombies/gargantuar0001.png" },
+      "24": { "Name": "imp",     "World": "Roof",  "Toughness": "Low",             "Speed": "Fast",     "Special": "No",  "Weakness": "No",  "Image": "Image/Zombies/imp0001.png" },
+      "25": { "Name": "dr.",     "World": "Moon",  "Toughness": "Extreme",         "Speed": "None",     "Special": "Yes", "Weakness": "No",  "Image": "Image/Zombies/zomboss0010.png" }
+    }
+  }
+}
